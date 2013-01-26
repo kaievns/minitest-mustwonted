@@ -2,11 +2,6 @@ require 'test_helper'
 
 describe MiniTest::MustWonted::Matcher::Awesome do
 
-  def assert_fails_correctly
-    # TODO make sure that the errors are raised with correct file/line references
-    -> { yield }.must_raise MiniTest::Assertion
-  end
-
   describe "==" do
     it "must test correctly" do
       "22".must == "22"

@@ -12,6 +12,8 @@ and hooks for testing ruby/rails applications.
 
 ## Awesome Matchers
 
+Awesome matchers are set of easy to read logic-like matchers
+
 ```ruby
 describe MiniTest::MustWonted do
   it "must provide awesome matchers" do
@@ -28,6 +30,24 @@ describe MiniTest::MustWonted do
   end
 end
 ```
+
+## Magick Matchers
+
+Magick matchers are `rspec` like `be_smth` matchers
+
+```ruby
+describe MiniTest::MustWonted do
+  it "must provide magick matchers" do
+    [].must  be_empty
+    [0].wont be_empty
+
+    nil.must be_nil
+    '0'.wont be_nil
+  end
+end
+```
+
+
 
 
 ## Credits

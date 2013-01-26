@@ -25,4 +25,15 @@ class MiniTest::Spec
     subject.wont(*args)
   end
 
+  #
+  # Catching up the magick `be_smthing?` matchers
+  #
+  def method_missing(name, *args)
+    if name.slice(0, 3) == 'be_'
+      MiniTest::MustWonted::Matcher::Magick.new(name, args)
+    else
+      super name, *args
+    end
+  end
+
 end
