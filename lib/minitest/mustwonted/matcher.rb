@@ -4,11 +4,11 @@
 class MiniTest::MustWonted::Matcher
   attr_accessor :subject, :type
 
-  def self.must(subject, *args)
+  def self.must(subject, args=[])
     new(subject, :must)
   end
 
-  def self.wont(subject, *args)
+  def self.wont(subject, args=[])
     new(subject, :wont)
   end
 

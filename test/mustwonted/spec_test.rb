@@ -12,28 +12,13 @@ describe MiniTest::Spec do
     assert respond_to?(:wont)
   end
 
-  it "must return the Matcher from 'must' when called without params" do
-    assert must.is_a?(MiniTest::MustWonted::Matcher)
+  it "should bypass the 'must' calls to the current subject" do
+    subject.expects(:must).with('something')
+    must 'something'
   end
 
-  it "must return the Matcher from 'must' when called without params" do
-    assert wont.is_a?(MiniTest::MustWonted::Matcher)
+  it "should bypass the 'wont' calls to the current subject" do
+    subject.expects(:wont).with('something')
+    wont 'something'
   end
-
-  it "must bind the current subject to the matchers from 'must'" do
-    assert_equal must.subject, subject
-  end
-
-  it "must bind the current subject to the matchers from 'wont'" do
-    assert_equal wont.subject, subject
-  end
-
-  it "must return a 'must' type matchers from 'must'" do
-    assert_equal must.type, :must
-  end
-
-  it "must return a 'wont' type matchers from 'wont'" do
-    assert_equal wont.type, :wont
-  end
-
 end
