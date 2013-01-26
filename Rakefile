@@ -1,5 +1,7 @@
+require 'rake/testtask'
 
-desc "Run the tests"
-task :test do
-  system './bin/mw test/' # run it through the binary to make sure it works
+Rake::TestTask.new do |t|
+  t.libs   << "test"
+  t.pattern = "test/**/*_test.rb"
 end
+
