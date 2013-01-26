@@ -20,11 +20,39 @@ class MiniTest::MustWonted::Matcher
   end
 
   def ==(value)
-    __send__ "#{type == :must ? 'assert' : 'refute'}_equal", subject, value
+    __call 'equal', false, subject, value
   end
 
   def !=(value)
-    __send__ "#{type == :must ? 'refute' : 'assert'}_equal", subject, value
+    __call 'equal', true, subject, value
+  end
+
+  def =~(regexp)
+    __call 'match', false, subject, regexp
+  end
+
+  def > (value)
+    __call 'operator', false, subject, :>, value
+  end
+
+  def < (value)
+    __call 'operator', false, subject, :<, value
+  end
+
+  def >= (value)
+    __call 'operator', false, subject, :>=, value
+  end
+
+  def <= (value)
+    __call 'operator', false, subject, :<=, value
+  end
+
+private
+
+  def __call(name, flip, *args)
+    __send__ "#{
+      type == (flip ? :wont : :must) ? 'assert' : 'refute'
+    }_#{name}", *args
   end
 
 end
