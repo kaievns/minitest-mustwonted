@@ -10,7 +10,7 @@ class Object
   #     ....
   #
   def must(*args)
-    MiniTest::MustWonted::Matcher.must(self, args)
+    MiniTest::MustWonted::Matcher.must(self, *args)
   end
 
   #
@@ -21,6 +21,6 @@ class Object
   #     ....
   #
   def wont(*args)
-    MiniTest::MustWonted::Matcher.wont(self, args)
+    MiniTest::MustWonted::Matcher.wont(self, *args)
   end
 end

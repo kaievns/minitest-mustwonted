@@ -6,6 +6,7 @@ end
 
 %w{
   matcher
+  matcher/awesome
   object
   spec
   run

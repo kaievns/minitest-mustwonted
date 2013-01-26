@@ -2,7 +2,7 @@
 
 This is a little plugn for [minitest](https://github.com/seattlerb/minitest)
 which contains a new `must/wont` matchers engine, a set of essential matchers
-and hooks for testing rails applications.
+and hooks for testing ruby/rails applications.
 
 ## Usage
 
@@ -10,7 +10,7 @@ and hooks for testing rails applications.
 2) Enjoy!
 
 
-## Magick Matchers
+## Awesome Matchers
 
 ```ruby
 describe MiniTest::MustWonted do
