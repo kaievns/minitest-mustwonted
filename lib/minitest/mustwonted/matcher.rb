@@ -1,5 +1,5 @@
 #
-# The actuall matcher engine
+# The actual matcher engine
 #
 class MiniTest::MustWonted::Matcher
   attr_accessor :subject, :type

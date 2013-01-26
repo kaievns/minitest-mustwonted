@@ -11,7 +11,7 @@ class MiniTest::Spec
   #     it { must do_something }
   #
   def must(*args)
-    matcher = MiniTest::MustWonted::Matcher.new(subject, :must)
+    subject.must(*args)
   end
 
   #
@@ -22,7 +22,7 @@ class MiniTest::Spec
   #     it { wont do_something }
   #
   def wont(*args)
-    matcher = MiniTest::MustWonted::Matcher.new(subject, :wont)
+    subject.wont(*args)
   end
 
 end
