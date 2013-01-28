@@ -81,6 +81,27 @@ also can use the `item` or `items` on plain array-like objects, in which case it
 will be checking the `size` method by default
 
 
+## Legacy Matchers
+
+Most of the `assert_smth` | `refute_smth` methods are piped throught the `must` |
+`wont` interface automatically and resolved on fly.
+
+```ruby
+describe MiniTest::MustWonted do
+  it "must support legacy assertions" do
+    '2'.must equal(3)
+    '3'.wont equal(2)
+
+    '2'.must respond_to(:downcase)
+    [2].wont respond_to(:unknown_method)
+  end
+end
+```
+
+Note, this module will automatically use your custom `assert_something` methods
+as long as they take the subject as the first argument.
+
+
 
 ## Credits
 

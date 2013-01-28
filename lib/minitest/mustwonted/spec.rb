@@ -31,6 +31,8 @@ class MiniTest::Spec
   def method_missing(name, *args)
     if name.slice(0, 3) == 'be_'
       MiniTest::MustWonted::Matcher::Magick.new(name, args)
+    elsif respond_to?("assert_#{name}")
+      MiniTest::MustWonted::Matcher::Legacy.new(name, args, self)
     else
       super name, *args
     end

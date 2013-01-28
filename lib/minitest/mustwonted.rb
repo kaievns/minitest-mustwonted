@@ -12,6 +12,7 @@ end
   matcher
   matcher/awesome
   matcher/magick
+  matcher/legacy
   matcher/have
   object
   spec
