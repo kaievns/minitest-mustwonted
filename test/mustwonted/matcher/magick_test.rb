@@ -41,4 +41,14 @@ describe MiniTest::MustWonted::Matcher::Magick do
     end
   end
 
+  describe 'be_a/be_an matchers' do
+    it "must handle them correctly" do
+      '0'.must be_a(String)
+      [0].must be_an(Array)
+
+      '0'.wont be_an(Array)
+      [0].wont be_a(String)
+    end
+  end
+
 end

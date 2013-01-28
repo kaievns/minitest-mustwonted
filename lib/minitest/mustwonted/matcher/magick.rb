@@ -10,6 +10,7 @@ class MiniTest::MustWonted::Matcher::Magick
   end
 
   def match?(subject, wont)
+    @name = 'is_a?' if @name == 'a?' || @name == 'an?'
     match = subject.send @name, *@args
 
     if wont ? match : !match

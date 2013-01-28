@@ -43,6 +43,9 @@ describe MiniTest::MustWonted do
 
     nil.must be_nil
     '0'.wont be_nil
+
+    '0'.must be_a(String)
+    [0].must be_an(Array)
   end
 end
 ```
