@@ -13,6 +13,7 @@ end
   matcher/awesome
   matcher/magick
   matcher/legacy
+  matcher/valid
   matcher/have
   object
   spec
@@ -23,3 +24,4 @@ end
 
 # registering the matchers
 MiniTest::MustWonted.add :have, MiniTest::MustWonted::Matcher::Have
+MiniTest::MustWonted.add :have_valid, MiniTest::MustWonted::Matcher::Valid

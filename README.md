@@ -102,6 +102,21 @@ Note, this module will automatically use your custom `assert_something` methods
 as long as they take the subject as the first argument.
 
 
+## Validation Matchers
+
+`MustWonted` comes with a default models validation matchers similar to the
+`minitest-matchers` validation package
+
+```ruby
+describe MiniTest::MustWonted do
+  it "must provide validation matchers" do
+    @user.must have_valid(:name).with("Nikolay", "Vasilisa")
+    @user.wont have_valid(:name).with(nil, '', false)
+  end
+end
+```
+
+
 ## Custom Matchers
 
 There are two ways to define your own custom matchers. Firstly, you can just
