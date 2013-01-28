@@ -47,6 +47,35 @@ describe MiniTest::MustWonted do
 end
 ```
 
+## Collection Assertions
+
+Additional `have` matcher will let you write easily readable collection checks
+
+```ruby
+describe MiniTest::MustWonted do
+  class User
+    def comments(type=nil)
+      if type
+        Comment.where(type: type, user: self).count
+      else
+        Comment.where(user: self).count
+      end
+    end
+  end
+
+  it "must provide collection matchers" do
+    @user.must have(3).comments
+    @user.must have(1).comment(:deleted)
+
+    [1,2,3].must have(3).items
+    [1    ].must have(1).item
+  end
+end
+```
+
+__NOTE__: calls will be automatically pluralized and resolved when possible. You
+also can use the `item` or `items` on plain array-like objects, in which case it
+will be checking the `size` method by default
 
 
 
