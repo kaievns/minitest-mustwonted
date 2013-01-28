@@ -102,6 +102,65 @@ Note, this module will automatically use your custom `assert_something` methods
 as long as they take the subject as the first argument.
 
 
+## Custom Matchers
+
+There are two ways to define your own custom matchers. Firstly, you can just
+define the `assert_your_own_stuff` and, if needed `refute_your_own_stuff` methods
+and they will be automatically available via the `must`|`wont` interface
+
+```ruby
+describe Something do
+  def assert_do_my_thing(object, *args)
+    # do something
+  end
+
+  it "must work right away" do
+    something.must do_my_thing(arg)
+  end
+
+  # if you're gonna call 'wont' as well, then define `refutre_` too
+  def refute_do_my_thing(object, *args)
+    # do something
+  end
+
+  it "wont do my thing" do
+    something.wont do_my_thing(arg)
+  ned
+end
+```
+
+If you wanna do something more serious, you can define your matcher as a class
+
+```ruby
+class MyAwesomeMatcher
+  def initialize(*args)
+    @args = args
+  end
+
+  def match?(subject, wont)
+    @args   # - the args you send into the matcher
+    subject # - the object on which you called `must`|`wont`
+    wont    # - gets `true` when you called `wont` and `false` when you called `must`
+
+    if some_awesome_check_failed
+      railse "Oh my god, we all gonna die here!"
+    end
+  end
+end
+```
+
+Once you done, register your matcher with `MiniTest::MustWonted` and start using it
+
+```ruby
+MiniTest::MustWonted :method_name, MyAwesomeMatcher
+
+describe Something do
+  it "must do something" do
+    object.must method_name(arg, arg, arg...)
+  end
+end
+```
+
 
 ## Credits
 
