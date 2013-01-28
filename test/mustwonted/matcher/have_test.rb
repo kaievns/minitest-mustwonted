@@ -3,7 +3,7 @@ require 'test_helper'
 describe MiniTest::MustWonted::Matcher::Have do
 
   describe 'simple case' do
-    subject{ Struct.new(:dogs, :cats).new(3,2) }
+    subject{ Struct.new(:dogs, :cats).new([1,2,3],[1,2]) }
 
     it "must check correctly" do
       subject.must have(3).dogs
@@ -21,7 +21,7 @@ describe MiniTest::MustWonted::Matcher::Have do
 
   describe 'case with extra arguments' do
     class Subject
-      DOGS = {large: 4, small: 2}
+      DOGS = {large: [1,2,3,4], small: [1,2]}
 
       def dogs(size=nil)
         if size

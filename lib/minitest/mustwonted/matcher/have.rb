@@ -11,10 +11,13 @@ class MiniTest::MustWonted::Matcher::Have
   end
 
   def match?(subject, wont)
-    @name = :size if [:items, :item].include?(@name) && !subject.respond_to?(@name)
-    size  = subject.send @name, *@args
+    if [:items, :item].include?(@name) && !subject.respond_to?(@name)
+      items = subject
+    else
+      items = subject.send @name, *@args
+    end
 
-    if wont ? size == @size : size != @size
+    if wont ? items.size == @size : items.size != @size
       raise MiniTest::Assertion, "Expected #{subject.inspect} to have #{
         @size} ##{@name}(#{@args.join(',')})\nbut instead it has: #{size}"
     end
