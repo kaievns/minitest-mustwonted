@@ -1,7 +1,7 @@
 require 'minitest/spec'
 
 module MiniTest::MustWonted
-  VERSION = '0.0.0'
+  VERSION = '1.0.0'
 
   def self.add(*args)
     MiniTest::MustWonted::Matcher.add *args
