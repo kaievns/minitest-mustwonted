@@ -1,4 +1,4 @@
-# Must Wanted Things for MiniTest
+# Most Wanted Things for MiniTest
 
 This is a little plugn for [minitest](https://github.com/seattlerb/minitest)
 which contains a new rspec-like `must/wont` matchers engine, and a set of
