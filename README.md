@@ -1,13 +1,13 @@
 # Must Wanted Things for MiniTest
 
 This is a little plugn for [minitest](https://github.com/seattlerb/minitest)
-which contains a new `must/wont` matchers engine, a set of essential matchers
-and hooks for testing ruby/rails applications.
+which contains a new rspec-like `must/wont` matchers engine, and a set of
+essential matchers and hooks for testing ruby/rails applications.
 
 ## Usage
 
-1) Add `gem minitest-mustwonted` into your `Gemfile`
-2) Enjoy!
+1. Add `gem minitest-mustwonted` into your `Gemfile`
+2. Enjoy!
 
 
 ## Awesome Matchers
@@ -181,10 +181,10 @@ end
 
 Most ideas were boldly taken from:
 
-[minitest-rails](https://github.com/blowmage/minitest-rails)
-[minitest-matchers](https://github.com/zenspider/minitest-matchers)
-[shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
-[rspec-rails](https://github.com/rspec/rspec-rails)
+* [minitest-rails](https://github.com/blowmage/minitest-rails)
+* [minitest-matchers](https://github.com/zenspider/minitest-matchers)
+* [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
+* [rspec-rails](https://github.com/rspec/rspec-rails)
 
 
 ## Copyright
