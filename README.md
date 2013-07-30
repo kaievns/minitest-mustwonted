@@ -1,6 +1,6 @@
-# Most Wanted Things for MiniTest
+# Most Wanted Things for Minitest
 
-This is a little plugn for [minitest](https://github.com/seattlerb/minitest)
+This is a little plugn for [Minitest](https://github.com/seattlerb/Minitest)
 which contains a new rspec-like `must/wont` matchers engine, and a set of
 essential matchers and hooks for testing ruby/rails applications.
 
@@ -15,7 +15,7 @@ essential matchers and hooks for testing ruby/rails applications.
 Awesome matchers are set of easy to read logic-like matchers
 
 ```ruby
-describe MiniTest::MustWonted do
+describe Minitest::MustWonted do
   it "must provide awesome matchers" do
     22.must == 22
     22.wont == 33
@@ -36,7 +36,7 @@ end
 Magick matchers are `rspec` like `be_smth` matchers
 
 ```ruby
-describe MiniTest::MustWonted do
+describe Minitest::MustWonted do
   it "must provide magick matchers" do
     [].must  be_empty
     [0].wont be_empty
@@ -55,7 +55,7 @@ end
 Additional `have` matcher will let you write easily readable collection checks
 
 ```ruby
-describe MiniTest::MustWonted do
+describe Minitest::MustWonted do
   class User
     def comments(type=nil)
       if type
@@ -87,7 +87,7 @@ Most of the `assert_smth` | `refute_smth` methods are piped throught the `must` 
 `wont` interface automatically and resolved on fly.
 
 ```ruby
-describe MiniTest::MustWonted do
+describe Minitest::MustWonted do
   it "must support legacy assertions" do
     '2'.must equal(3)
     '3'.wont equal(2)
@@ -108,7 +108,7 @@ as long as they take the subject as the first argument.
 `minitest-matchers` validation package
 
 ```ruby
-describe MiniTest::MustWonted do
+describe Minitest::MustWonted do
   it "must provide validation matchers" do
     @user.must have_valid(:name).with("Nikolay", "Vasilisa")
     @user.wont have_valid(:name).with(nil, '', false)
@@ -164,10 +164,10 @@ class MyAwesomeMatcher
 end
 ```
 
-Once you done, register your matcher with `MiniTest::MustWonted` and start using it
+Once you done, register your matcher with `Minitest::MustWonted` and start using it
 
 ```ruby
-MiniTest::MustWonted :method_name, MyAwesomeMatcher
+Minitest::MustWonted :method_name, MyAwesomeMatcher
 
 describe Something do
   it "must do something" do

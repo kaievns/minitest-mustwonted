@@ -1,6 +1,6 @@
 require 'test_helper'
 
-describe MiniTest::MustWonted::Matcher::Magick do
+describe Minitest::MustWonted::Matcher::Magick do
 
   describe "plain calls" do
 

@@ -1,7 +1,7 @@
 #
 # Console runnner
 #
-module MiniTest::MustWonted
+module Minitest::MustWonted
   def self.run(args)
     puts args
   end

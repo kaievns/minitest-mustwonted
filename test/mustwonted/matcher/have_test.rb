@@ -1,6 +1,6 @@
 require 'test_helper'
 
-describe MiniTest::MustWonted::Matcher::Have do
+describe Minitest::MustWonted::Matcher::Have do
 
   describe 'simple case' do
     subject{ Struct.new(:dogs, :cats).new([1,2,3],[1,2]) }

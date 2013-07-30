@@ -1,6 +1,6 @@
 require 'test_helper'
 
-describe MiniTest::MustWonted::Matcher::Legacy do
+describe Minitest::MustWonted::Matcher::Legacy do
 
   describe "simple case" do
     it "must be handled correctly" do

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-describe MiniTest::MustWonted::Matcher::Awesome do
+describe Minitest::MustWonted::Matcher::Awesome do
 
   describe "==" do
     it "must test correctly" do

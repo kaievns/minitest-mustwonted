@@ -1,7 +1,7 @@
 require 'test_helper'
 
 
-describe MiniTest::Spec do
+describe Minitest::Spec do
   subject { {} }
 
   it "must allow to use must" do

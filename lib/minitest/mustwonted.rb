@@ -1,10 +1,10 @@
 require 'minitest/spec'
 
-module MiniTest::MustWonted
-  VERSION = '1.0.0'
+module Minitest::MustWonted
+  VERSION = '1.0.1'
 
   def self.add(*args)
-    MiniTest::MustWonted::Matcher.add *args
+    Minitest::MustWonted::Matcher.add *args
   end
 end
 
@@ -23,5 +23,5 @@ end
 end
 
 # registering the matchers
-MiniTest::MustWonted.add :have, MiniTest::MustWonted::Matcher::Have
-MiniTest::MustWonted.add :have_valid, MiniTest::MustWonted::Matcher::Valid
+Minitest::MustWonted.add :have, Minitest::MustWonted::Matcher::Have
+Minitest::MustWonted.add :have_valid, Minitest::MustWonted::Matcher::Valid

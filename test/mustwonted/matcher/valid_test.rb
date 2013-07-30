@@ -1,6 +1,6 @@
 require 'test_helper'
 
-describe MiniTest::MustWonted::Matcher::Valid do
+describe Minitest::MustWonted::Matcher::Valid do
 
   class User
     attr_accessor :name, :email, :errors

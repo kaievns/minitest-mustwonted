@@ -7,7 +7,7 @@
 #
 # Credits: we're mimicking the minitest-matchers validation matchers here
 #
-class MiniTest::MustWonted::Matcher::Valid
+class Minitest::MustWonted::Matcher::Valid
   def initialize(name)
     @name = name.to_sym
     @args = []
@@ -35,12 +35,12 @@ class MiniTest::MustWonted::Matcher::Valid
     error = subject.errors[@name]
 
     if error && !wont
-      raise MiniTest::Assertion, "Expected the #{
+      raise Minitest::Assertion, "Expected the #{
         subject.inspect} to have valid #{@name
         } with #{subject.send(@name).inspect
         }\nbut had an error instead: #{error.inspect}"
     elsif wont && !error
-      raise MiniTest::Assertion, "Expected the #{
+      raise Minitest::Assertion, "Expected the #{
         subject.inspect} to have invalid #{@name
         } with #{subject.send(@name).inspect
         }\nbut had no errors for this field instead"

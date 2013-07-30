@@ -1,12 +1,12 @@
 #
 # The actual matcher engine
 #
-class MiniTest::MustWonted::Matcher
+class Minitest::MustWonted::Matcher
 
   class << self
     def must(subject, matcher=nil, flipped=false)
       if matcher == nil
-        MiniTest::MustWonted::Matcher::Awesome.new(subject, flipped)
+        Minitest::MustWonted::Matcher::Awesome.new(subject, flipped)
       elsif matcher.respond_to?(:match?)
         matcher.match?(subject, flipped)
         subject # returning the reference to the subject in case of chained calls
@@ -20,9 +20,17 @@ class MiniTest::MustWonted::Matcher
     end
 
     def add(name, klass)
-      MiniTest::Unit::TestCase.instance_eval do
+      Minitest::Spec.instance_eval do
         define_method name do |*args|
           klass.new *args
+        end
+      end
+
+      if defined?(ActiveSupport)
+        ActiveSupport::TestCase.instance_eval do
+          define_method name do |*args|
+            klass.new *args
+          end
         end
       end
     end

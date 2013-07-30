@@ -4,7 +4,7 @@
 #     @user.must have(10).comments
 #     @array.must have(2).items
 #
-class MiniTest::MustWonted::Matcher::Have
+class Minitest::MustWonted::Matcher::Have
 
   def initialize(size)
     @size = size
@@ -18,7 +18,7 @@ class MiniTest::MustWonted::Matcher::Have
     end
 
     if wont ? items.size == @size : items.size != @size
-      raise MiniTest::Assertion, "Expected #{subject.inspect} to have #{
+      raise Minitest::Assertion, "Expected #{subject.inspect} to have #{
         @size} ##{@name}(#{@args.join(',')})\nbut instead it has: #{size}"
     end
   end

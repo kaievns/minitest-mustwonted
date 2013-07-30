@@ -6,26 +6,27 @@
 #     smth.must > smth
 #     ...
 #
-class MiniTest::MustWonted::Matcher::Awesome
-  include MiniTest::Assertions
+class Minitest::MustWonted::Matcher::Awesome
+  include Minitest::Assertions
 
-  attr_reader :subject, :flipped
+  attr_accessor :subject, :flipped, :assertions
 
   def initialize(subject, flipped)
-    @subject = subject
-    @flipped = flipped
+    @subject    = subject
+    @flipped    = flipped
+    @assertions = 0
   end
 
   def ==(value)
-    __call 'equal', false, @subject, value
+    __call 'equal', false, value, @subject
   end
 
   def !=(value)
-    __call 'equal', true, @subject, value
+    __call 'equal', true, value, @subject
   end
 
   def =~(regexp)
-    __call 'match', false, @subject, regexp
+    __call 'match', false, regexp, @subject
   end
 
   def > (value)

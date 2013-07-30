@@ -1,9 +1,9 @@
 require 'test_helper'
 
-describe MiniTest::MustWonted::Matcher do
+describe Minitest::MustWonted::Matcher do
   subject{ nil }
 
-  Matcher = MiniTest::MustWonted::Matcher
+  Matcher = Minitest::MustWonted::Matcher
 
   describe ".must" do
     describe "without a matcher" do

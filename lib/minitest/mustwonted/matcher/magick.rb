@@ -1,7 +1,7 @@
 #
 # The Magick `be_smth` matcher
 #
-class MiniTest::MustWonted::Matcher::Magick
+class Minitest::MustWonted::Matcher::Magick
 
   def initialize(name, args)
     @name = name.slice(3, name.size)
@@ -14,7 +14,7 @@ class MiniTest::MustWonted::Matcher::Magick
     match = subject.send @name, *@args
 
     if wont ? match : !match
-      raise MiniTest::Assertion, "Expected #{subject.inspect} ##{
+      raise Minitest::Assertion, "Expected #{subject.inspect} ##{
         @name} to return: #{ wont ? "false" : "true"
       }\nbut instead have: #{match.inspect}"
     end

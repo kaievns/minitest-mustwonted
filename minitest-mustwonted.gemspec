@@ -1,9 +1,9 @@
 Gem::Specification.new do |s|
   s.name    = 'minitest-mustwonted'
-  s.version = '1.0.0'
-  s.date    = '2013-01-29'
+  s.version = '1.0.1'
+  s.date    = '2013-07-30'
 
-  s.summary = "new must/wont matchers engine for minitest"
+  s.summary = "new must/wont matchers engine for Minitest"
   s.description = "Provides a new unversal and esily extendable matchers engine"
 
   s.authors  = ['Nikolay Nemshilov']

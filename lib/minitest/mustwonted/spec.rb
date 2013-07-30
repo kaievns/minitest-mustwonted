@@ -1,7 +1,7 @@
 #
-# Extra sweets for the MiniTest::Spec unit
+# Extra sweets for the Minitest::Spec unit
 #
-class MiniTest::Spec
+class Minitest::Spec
 
   #
   # A shortcut to `must` directly on current subject
@@ -30,12 +30,29 @@ class MiniTest::Spec
   #
   def method_missing(name, *args)
     if name.slice(0, 3) == 'be_'
-      MiniTest::MustWonted::Matcher::Magick.new(name, args)
+      Minitest::MustWonted::Matcher::Magick.new(name, args)
     elsif respond_to?("assert_#{name}")
-      MiniTest::MustWonted::Matcher::Legacy.new(name, args, self)
+      Minitest::MustWonted::Matcher::Legacy.new(name, args, self)
     else
       super name, *args
     end
   end
 
+end
+
+if defined?(ActiveSupport)
+  class ActiveSupport::TestCase
+    #
+    # Catching up the magick `be_smthing?` matchers
+    #
+    def method_missing(name, *args)
+      if name.slice(0, 3) == 'be_'
+        Minitest::MustWonted::Matcher::Magick.new(name, args)
+      elsif respond_to?("assert_#{name}")
+        Minitest::MustWonted::Matcher::Legacy.new(name, args, self)
+      else
+        super name, *args
+      end
+    end
+  end
 end

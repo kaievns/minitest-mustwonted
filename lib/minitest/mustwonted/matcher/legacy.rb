@@ -2,7 +2,7 @@
 # This matcher automatically calls the legacy `must_smth`, `refute_something`
 # matchers if they are exists
 #
-class MiniTest::MustWonted::Matcher::Legacy
+class Minitest::MustWonted::Matcher::Legacy
 
   def initialize(name, args, test)
     @name = name

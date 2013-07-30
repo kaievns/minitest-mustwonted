@@ -10,7 +10,7 @@ describe Object do
     end
 
     it "must bypass the call into Matcher.must" do
-      MiniTest::MustWonted::Matcher.expects(:must).with(subject, 'something')
+      Minitest::MustWonted::Matcher.expects(:must).with(subject, 'something')
 
       subject.must 'something'
     end
@@ -22,7 +22,7 @@ describe Object do
     end
 
     it "must bypass the call into Matcher.wont" do
-      MiniTest::MustWonted::Matcher.expects(:wont).with(subject, 'something')
+      Minitest::MustWonted::Matcher.expects(:wont).with(subject, 'something')
 
       subject.wont 'something'
     end
